@@ -1,0 +1,222 @@
+1. You are given as input marks of a student.
+2. Display an appropriate message based on the following rules:
+  	  2.1 for marks above 90, print excellent.
+  	  2.2 for marks above 80 and less than equal to 90, print good.
+  	  2.3 for marks above 70 and less than equal to 80, print fair.
+  	  2.4 for marks above 60 and less than equal to 70, print meets expectations.
+  	  2.5 for marks less than equal to 60, print below par.
+      
+      
+Solution:-
+
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) {
+    // input - don't change this code
+    Scanner scn = new Scanner(System.in);
+    int marks = scn.nextInt();
+    // input - don't change this code
+
+    if (marks > 90){
+        System.out.println("excellent");
+    }
+    else if (marks > 80){
+        System.out.println("good");
+    }
+    else if (marks > 70){
+        System.out.println("fair");
+    }
+    else if (marks > 60){
+        System.out.println("meets expectations");
+    }
+    else{
+        System.out.println("below par");
+    }
+  }
+}
+
+
+1. You've to check whether a given number is prime or not.
+2. Take a number "t" as input representing count of input numbers to be tested.
+3. Take a number "n" as input "t" number of times.
+4. For each input value of n, print "prime" if the number is prime and "not prime" otherwise.
+
+Constraints
+1 <= t <= 10000
+2 <= n < 10^9
+
+Format
+Input
+A number t
+A number n
+A number n
+.. t number of times
+
+Output
+prime
+not prime
+not prime
+.. t number of times
+
+Example
+Sample Input
+
+5
+13
+2
+3
+4
+5
+
+Sample Output
+prime
+prime
+prime
+not prime
+prime
+
+
+Solution:-
+import java.util.*;
+  
+  public class Main{
+  
+  public static void main(String[] args) {
+      Scanner scn = new Scanner(System.in);
+  
+       // write ur code here
+       int t = scn.nextInt();
+
+       for(int i = 0; i < t; i++){
+         int n = scn.nextInt();
+         
+         boolean isPrime = true;
+         for(int j = 2; j*j <= n; j++){
+           if (n % j == 0){
+             isPrime = false;
+             break;
+           }
+         }
+
+         if (isPrime == true){
+           System.out.println("prime");
+         }
+         else{
+           System.out.println("not prime");
+         }
+       }
+
+   }
+  }
+  
+1. You've to display the digits of a number in reverse.
+2. Take as input "n", the number for which digits have to be display in reverse.
+3. Print the digits of the number line-wise, but in reverse order.
+
+Constraints
+1 <= n < 10^9
+
+Format
+Input
+"n" where n is any integer.
+
+Output
+d1
+d2
+d3
+... digits of the number in reverse
+
+Example
+Sample Input
+
+65784383
+
+Sample Output
+3
+8
+3
+4
+8
+7
+5
+6
+
+
+Solutuin:-
+
+import java.util.*;
+   
+   public class Main{
+   
+   public static void main(String[] args) {
+     // write your code here
+     Scanner scn = new Scanner(System.in);
+     int n = scn.nextInt();
+
+     while (n != 0){
+       int rem = n % 10;
+       n = n/10;
+       System.out.println(rem);
+     }  
+    }
+   }
+   
+   
+ Pattern 1:
+ import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+
+        // write ur code here
+        int n = scn.nextInt();
+
+        int nst = 1;
+        int nsp = 0;
+
+        // for number of rows
+        for(int i = 1; i <= n; i++){
+            // for number of stars
+            for(int j = 1; j <= nst; j++){
+                System.out.print("*\t");
+            }
+            System.out.println();
+            nst += 1;
+        }
+
+    }
+}
+
+
+Pattern:- 3
+
+public class Main{
+    
+    public static void main(String [] args){
+        
+        int n = 6;
+        int nst = 1;
+        int nsp = 0;
+        
+        for(int i = 1; i <= n; i++){
+            
+            for(int j = 1; j <= nst; j++){
+                
+                System.out.print("*");
+            }
+            
+            for(int j = n-i; j > 1; j--){
+                System.out.print(" ");
+            }
+            
+            nst += 2;
+            nst -= 1;
+            
+            System.out.println();
+        }
+    }
+}
